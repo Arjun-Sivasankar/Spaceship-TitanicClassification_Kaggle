@@ -12,10 +12,10 @@ The challenge is to predict which passengers were transported by the anomaly usi
 ## Requirements
 To run the code in this repository, you will need the following software installed:
 
-Python 3.7 or higher
-NumPy
-Pandas
-Scikit-learn
+ - Python 3.7 or higher
+ - NumPy
+ - Pandas
+ - Scikit-learn
 
 ## Conclusion
 This repository provides a solution to the Kaggle Titanic competition using various classifiers. The repository can be used as a reference to learn about binary classification, feature engineering and hyperparameter tuning. Feel free to contribute to the repository or use the code for your own projects.
