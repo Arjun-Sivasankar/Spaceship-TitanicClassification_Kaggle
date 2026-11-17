@@ -1,0 +1,21 @@
+# Kaggle API credentials must never be committed again.
+.kaggle/
+kaggle.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
