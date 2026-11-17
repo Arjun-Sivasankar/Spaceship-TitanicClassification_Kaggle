@@ -1,21 +1,34 @@
-# Spaceship-Titanic: Machine Learning (Binary Classification)
-This repository contains the code for a binary classification problem in which the task is to predict whether a passenger on the Spaceship Titanic were transported or not based on the "Spaceship-Titanic" dataset. This is a Kaggle competition, and the goal is to achieve the highest accuracy possible on the test dataset.
+# Spaceship Titanic: binary classification
+
+Predicting which passengers survived the Spaceship Titanic anomaly, the introductory Kaggle competition. Nearly 13,000 passengers, a skewed target, a lot of missing values in the spending columns, and a leaderboard that punishes you for not handling them carefully.
+
+The point of this repository is not the leaderboard position. It is the model comparison: nine classifiers, same features, same split, so the differences you see are differences between models rather than between experiments.
 
 ## Dataset
-Welcome to the year 2912, where your data science skills are needed to solve a cosmic mystery. We've received a transmission from four lightyears away and things aren't looking good.
 
-The Spaceship Titanic was an interstellar passenger liner launched a month ago. With almost 13,000 passengers on board, the vessel set out on its maiden voyage transporting emigrants from our solar system to three newly habitable exoplanets orbiting nearby stars.
+Kaggle's Spaceship Titanic. Each row is a passenger with home planet, cabin, age, and spending on five onboard amenities, and the target is whether they were transported. Missing spending values are informative rather than random, which is the central feature-engineering decision in this competition.
 
-While rounding Alpha Centauri en route to its first destination—the torrid 55 Cancri E—the unwary Spaceship Titanic collided with a spacetime anomaly hidden within a dust cloud. Sadly, it met a similar fate as its namesake from 1000 years before. Though the ship stayed intact, almost half of the passengers were transported to an alternate dimension!
-The challenge is to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system
+## What is in here
+
+| Path | What it does |
+|---|---|
+| `Spaceship_titanic.ipynb` | Loading, feature engineering, training and comparison of the models |
+| `models/*.pkl` | The trained models, one pickle each |
+| `Kaggle_submission.csv` | Predictions in submission format |
+| `sample_submission.csv` | The competition's expected format |
+
+The trained models are AdaBoost, decision tree, gradient boosting, k-nearest neighbours, LightGBM, a multi-layer perceptron, random forest, support vector classifier and XGBoost.
 
 ## Requirements
-To run the code in this repository, you will need the following software installed:
 
- - Python 3.7 or higher
- - NumPy
- - Pandas
- - Scikit-learn
+```bash
+pip install numpy pandas scikit-learn lightgbm xgboost
+```
 
-## Conclusion
-This repository provides a solution to the Kaggle Titanic competition using various classifiers. The repository can be used as a reference to learn about binary classification, feature engineering and hyperparameter tuning. Feel free to contribute to the repository or use the code for your own projects.
+The notebook also needs Jupyter.
+
+## Notes
+
+- The competition ships separate train and test files from Kaggle; `sample_submission.csv` is included here so the output format is clear without downloading anything.
+- On tabular data this small, gradient-boosted trees usually beat a neural network without any tuning. Running the comparison once and watching that happen is more convincing than reading it.
+- To run it against the real leaderboard you will need your own Kaggle API credentials, which belong outside the repository.
